@@ -1,8 +1,6 @@
 API DOCS AND IMPLEMENTATION
 
 
-Always use the request_token in the header's X-CSRF-TOKEN for all POST request.
-
 <Request Token>
     axios({
         ...
@@ -26,7 +24,10 @@ Always use the request_token in the header's X-CSRF-TOKEN for all POST request.
         url: ".../apis/user/create",
         method: 'POST',
         headers: {
-            "X-CSRF-TOKEN" : request_token
+            'Access-Control-Allow-Origin':"*",
+                    'Cache-Control': 'no-cache',
+                    'Pragma': 'no-cache',
+                    "BEARER-TOKEN" : "intern@omegatechnologies"
         },
         data:{
             name:"val"
@@ -51,7 +52,10 @@ Always use the request_token in the header's X-CSRF-TOKEN for all POST request.
         url: ".../apis/user/validate",
         method: 'POST',
         headers: {
-            "X-CSRF-TOKEN" : request_token
+            'Access-Control-Allow-Origin':"*",
+                    'Cache-Control': 'no-cache',
+                    'Pragma': 'no-cache',
+                    "BEARER-TOKEN" : "intern@omegatechnologies"
         },
         data:{
             email:"email"
@@ -67,7 +71,10 @@ Always use the request_token in the header's X-CSRF-TOKEN for all POST request.
         url: ".../apis/user/fetch",
         method: 'POST',
         headers: {
-            "X-CSRF-TOKEN" : request_token
+            'Access-Control-Allow-Origin':"*",
+                    'Cache-Control': 'no-cache',
+                    'Pragma': 'no-cache',
+                    "BEARER-TOKEN" : "intern@omegatechnologies"
         },
         data:{
             fetchset:['name', 'email' ...]
@@ -88,7 +95,10 @@ Always use the request_token in the header's X-CSRF-TOKEN for all POST request.
         url: ".../apis/user/update",
         method: 'POST',
         headers: {
-            "X-CSRF-TOKEN" : request_token
+            'Access-Control-Allow-Origin':"*",
+                    'Cache-Control': 'no-cache',
+                    'Pragma': 'no-cache',
+                    "BEARER-TOKEN" : "intern@omegatechnologies"
         },
         data:{
             updset:{
@@ -139,7 +149,10 @@ Always use the request_token in the header's X-CSRF-TOKEN for all POST request.
         url: ".../apis/product/create",
         method: 'POST',
         headers: {
-            "X-CSRF-TOKEN" : request_token
+            'Access-Control-Allow-Origin':"*",
+                    'Cache-Control': 'no-cache',
+                    'Pragma': 'no-cache',
+                    "BEARER-TOKEN" : "intern@omegatechnologies"
         },
         data:f_data
         ...
@@ -152,3 +165,55 @@ Always use the request_token in the header's X-CSRF-TOKEN for all POST request.
         }
     }
 </Product Create>
+
+
+
+<Waitlist Create>
+    
+    data = {
+        'name' : "product_name",
+        'price' : product_name,
+        'description' : "product_description",
+        'type' : "type",    // Can be "Dyed", "Natural_Dyed", "Undyed" etc... 
+        'category' : "category", //Can be "Shoe", "Bag", "Shirt" etc...
+    }
+    
+    axios({
+        ...
+        url: ".../apis/product/create",
+        method: 'POST',
+        headers: {
+            'Access-Control-Allow-Origin':"*",
+                    'Cache-Control': 'no-cache',
+                    'Pragma': 'no-cache',
+                    "BEARER-TOKEN" : "intern@omegatechnologies"
+        },
+        data:data
+        ...
+    ))
+    Example Success
+    {
+        "status":"200",
+        "data":{
+            "waitlist_code":"v78Q"
+        }
+    }
+</Waitlist Create>
+
+<Waitlist Fetch>
+    axios({
+        ...
+        url: ".../apis/user/fetch",
+        method: 'POST',
+        headers: {
+            'Access-Control-Allow-Origin':"*",
+                    'Cache-Control': 'no-cache',
+                    'Pragma': 'no-cache',
+                    "BEARER-TOKEN" : "intern@omegatechnologies"
+        },
+        data:{
+            fetchset:['name', 'email' ...]
+        }
+        ...
+    ))
+</Waitlist Fetch>
