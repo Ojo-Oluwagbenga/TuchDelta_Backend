@@ -171,12 +171,12 @@ API DOCS AND IMPLEMENTATION
 <Waitlist Create>
     
     data = {
-        'name' : "product_name",
-        'price' : product_name,
-        'description' : "product_description",
-        'type' : "type",    // Can be "Dyed", "Natural_Dyed", "Undyed" etc... 
-        'category' : "category", //Can be "Shoe", "Bag", "Shirt" etc...
-    }
+        'name' : "v78Q",
+        'email' : "base@base.com",
+        'message' : "author_code",
+        'otherdata' : "-",//JSON.stringify({other_needed_datas_here})
+        'date':"24th June 2024"
+    }    
     
     axios({
         ...
